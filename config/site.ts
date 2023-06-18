@@ -1,18 +1,16 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Confiteria Golfo Nuevo - Menu",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Cafetería Golfo Nuevo - ¿Qué le gustaría ordenar?",
   mainNav: [
     {
-      title: "Home",
+      title: "Inicio",
       href: "/",
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    facebook: "https://www.facebook.com/profile.php?id=100076494237211",
   },
 }
