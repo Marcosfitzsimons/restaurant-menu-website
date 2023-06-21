@@ -10,7 +10,7 @@ const SiteFooter = () => {
           <ul className="flex w-full items-center justify-center">
             <li>
               <Link
-                href="/"
+                href="/cart"
                 className="relative flex h-10 w-10 items-center justify-center rounded-full bg-black/90 dark:bg-white"
               >
                 <ShoppingCart className="h-4 w-4 text-slate-200 dark:text-background" />

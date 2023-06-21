@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import { ChefHat, Clock, DollarSign } from "lucide-react"
 
+import ProductCount from "./product-count"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 
@@ -31,22 +32,22 @@ const ProductDetails = () => {
       </div>
 
       <ul className="flex flex-wrap items-center gap-1">
-        <li className="shadow-sm select-none shadow-black/30 bg-accent/50 shrink-0 px-2 pt-1 py-[.2rem] rounded-md text-sm">
+        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
           Carne
         </li>
-        <li className="shadow-sm select-none shadow-black/30 bg-accent/50 shrink-0 px-2 pt-1 py-[.2rem] rounded-md text-sm">
+        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
           Queso
         </li>
-        <li className="shadow-sm select-none shadow-black/30 bg-accent/50 shrink-0 px-2 pt-1 py-[.2rem] rounded-md text-sm">
+        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
           Pan de hamburguesa
         </li>
-        <li className="shadow-sm select-none shadow-black/30 bg-accent/50 shrink-0 px-2 pt-1 py-[.2rem] rounded-md text-sm">
+        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
           Huevo
         </li>
-        <li className="shadow-sm select-none shadow-black/30 bg-accent/50 shrink-0 px-2 pt-1 py-[.2rem] rounded-md text-sm">
+        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
           Tomate
         </li>
-        <li className="shadow-sm select-none shadow-black/30 bg-accent/50 shrink-0 px-2 pt-1 py-[.2rem] rounded-md text-sm">
+        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
           Lechuga
         </li>
       </ul>
@@ -57,7 +58,7 @@ const ProductDetails = () => {
       </h3>
 
       <form className="flex w-full flex-col gap-2 ">
-        <Input type="number" />
+        <ProductCount />
         <Button className="w-full rounded-[2.2rem]">Agregar a mi pedido</Button>
       </form>
     </section>
