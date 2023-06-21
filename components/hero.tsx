@@ -1,6 +1,8 @@
 import React from "react"
 import Image from "next/image"
 
+import { Separator } from "./ui/separator"
+
 const Hero = () => {
   return (
     <section className="relative grid w-full items-center pb-16 pt-6 after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-transparent after:to-black/40">
@@ -12,7 +14,7 @@ const Hero = () => {
         sizes="(max-width: 768px) 100vw"
       />
       <div className="flex max-w-[980px] flex-col items-center gap-14">
-        <h1 className="z-20 rounded-full border border-[#e1e7ef] bg-accent px-2 py-1 text-[#e1e7ef]">
+        <h1 className="z-20 rounded-full border border-[#e1e7ef]/30 bg-accent/60 px-2 py-1 text-white backdrop-blur">
           Confitería Golfo Nuevo
         </h1>
 
