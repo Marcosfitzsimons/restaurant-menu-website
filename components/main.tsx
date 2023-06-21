@@ -5,11 +5,11 @@ import MostSold from "./most-sold"
 
 const Main = () => {
   return (
-    <main className="container flex flex-col gap-2 py-2">
+    <main className="container flex flex-col gap-2 py-4">
+      <Categories />
       <div className="">
         <SearchBar />
       </div>
-      <Categories />
       <MostSold />
     </main>
   )
