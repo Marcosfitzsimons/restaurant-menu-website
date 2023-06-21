@@ -14,8 +14,8 @@ const Hero = () => {
         sizes="(max-width: 768px) 100vw"
       />
       <div className="flex max-w-[980px] flex-col items-center gap-14">
-        <h1 className="z-20 rounded-full border border-[#e1e7ef]/30 bg-accent/60 px-2 py-1 text-white backdrop-blur">
-          Confitería Golfo Nuevo
+        <h1 className="font-serif font-[700] z-20 rounded-full border border-[#e1e7ef]/30 bg-accent/10 px-3 py-1 text-white shadow-md backdrop-blur">
+          Golfo Nuevo Confitería
         </h1>
 
         <h2 className="z-20 text-2xl font-extrabold leading-tight tracking-tighter text-white md:text-4xl">
