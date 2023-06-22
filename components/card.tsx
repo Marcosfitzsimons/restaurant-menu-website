@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { Plus } from "lucide-react"
 
 import { Button } from "./ui/button"
 
@@ -19,11 +20,16 @@ const Card = () => {
       <div className="z-20 flex justify-between">
         <div className="flex flex-col">
           <p className="">$2000</p>
-          <Link href="/" className="text-sm">
+          <Link href="/" className="text-sm text-white">
             ver más
           </Link>
         </div>
-        <Button>+</Button>
+        <Button
+          variant="secondary"
+          className="h-10 w-10 items-center justify-center self-end rounded-full border border-border"
+        >
+          <Plus className="h-5 w-5 shrink-0 rounded-full" />
+        </Button>
       </div>
     </article>
   )
