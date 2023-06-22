@@ -9,27 +9,27 @@ export const categoriesItems: CategoryItem[] = [
   },
   {
     id: 2,
+    icon: <Icons.wan />,
+    text: "Promos",
+  },
+  {
+    id: 3,
     icon: <Icons.utensilsCrossed />,
     text: "Comidas",
   },
   {
-    id: 3,
-    icon: <Icons.cupSoda />,
-    text: "Bebidas",
-  },
-  {
     id: 4,
     icon: <Icons.coffee />,
-    text: "Confitería",
+    text: "Cafetería",
   },
   {
     id: 5,
-    icon: <Icons.candy />,
-    text: "Golosinas",
+    icon: <Icons.croissant />,
+    text: "Dulces",
   },
   {
     id: 6,
-    icon: <Icons.iceCream />,
-    text: "Postres",
+    icon: <Icons.cupSoda />,
+    text: "Bebidas",
   },
 ]

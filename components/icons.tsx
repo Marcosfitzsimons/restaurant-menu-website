@@ -1,6 +1,6 @@
 import {
-  Candy,
   Coffee,
+  Croissant,
   CupSoda,
   Facebook,
   Home,
@@ -10,6 +10,7 @@ import {
   Moon,
   SunMedium,
   UtensilsCrossed,
+  Wand2,
   type Icon as LucideIcon,
 } from "lucide-react"
 
@@ -18,10 +19,11 @@ export type Icon = LucideIcon
 export const Icons = {
   sun: SunMedium,
   moon: Moon,
+  wan: Wand2,
   home: Home,
   cupSoda: CupSoda,
   layoutGrid: LayoutGrid,
-  candy: Candy,
+  croissant: Croissant,
   coffee: Coffee,
   utensilsCrossed: UtensilsCrossed,
   iceCream: IceCream,
