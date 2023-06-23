@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="relative grid w-full items-center pb-16 pt-6 after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-transparent after:to-black/40">
       <Image
-        src="/images/hero.jpg"
+        src="/images/hero.webp"
         alt="animales"
         fill
         className="-z-10 object-cover"
