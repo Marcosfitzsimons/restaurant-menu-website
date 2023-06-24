@@ -6,13 +6,46 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-import { Separator } from "./ui/separator"
-
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center justify-between space-x-4 sm:space-x-0">
-        <Link href="/" className="flex items-center justify-center space-x-2">
+        <div className="basis-[30%]">
+          <Link
+            href={siteConfig.links.instagram}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+              })}
+            >
+              <Icons.instagram className="h-5 w-5" />
+              <span className="sr-only">Instagram</span>
+            </div>
+          </Link>
+          <Link
+            href={siteConfig.links.facebook}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={buttonVariants({
+                size: "sm",
+                variant: "ghost",
+              })}
+            >
+              <Icons.facebook className="h-5 w-5" />
+              <span className="sr-only">Facebook</span>
+            </div>
+          </Link>
+        </div>
+        <Link
+          href="/"
+          className="flex basis-[30%] items-center justify-center space-x-2"
+        >
           <Image
             src="/images/logo.webp"
             alt={siteConfig.name}
@@ -21,39 +54,9 @@ export function SiteHeader() {
             className="rounded-full"
           />
         </Link>
-        <div className="flex items-center justify-end space-x-4">
+
+        <div className="flex basis-[30%] items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            <Link
-              href={siteConfig.links.facebook}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "sm",
-                  variant: "ghost",
-                })}
-              >
-                <Icons.facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </div>
-            </Link>
-            <Link
-              href={siteConfig.links.instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "sm",
-                  variant: "ghost",
-                })}
-              >
-                <Icons.instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </div>
-            </Link>
-            <Separator orientation="vertical" className="h-4" />
             <ThemeToggle />
           </nav>
         </div>
