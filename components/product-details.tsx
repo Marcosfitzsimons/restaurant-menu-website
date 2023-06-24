@@ -1,19 +1,32 @@
 import React from "react"
 import Image from "next/image"
-import { ChefHat, Clock, DollarSign } from "lucide-react"
+import { AlignLeft, Clock, DollarSign } from "lucide-react"
 
 import ProductCount from "./product-count"
 import { Button } from "./ui/button"
-import { Input } from "./ui/input"
 
-const ProductDetails = () => {
+async function getSingleProductData(id: number) {
+  const res = await fetch(`http://127.0.0.1:1337/api/products/${id}?populate=*`)
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data")
+  }
+  const data = res.json()
+  return data
+}
+
+const ProductDetails = async ({ params }: any) => {
+  const data = await getSingleProductData(params.id)
+  const productData = data.data.attributes
+
+  const productImgUrl = productData.imagen.data.attributes.formats.medium.url
   return (
-    <section className="mt-4 flex flex-col gap-3">
-      <h1 className="text-lg font-bold">Hamburguesa con queso</h1>
+    <section className="mt-4 flex flex-col gap-2">
+      <h1 className="text-lg font-bold">{productData.titulo}</h1>
 
-      <div className="relative h-80 w-full rounded-[1.5rem]">
+      <div className="relative h-80 w-full rounded-[1.5rem]  after:absolute after:inset-0 after:z-10 after:rounded-[1.5rem] after:bg-gradient-to-b after:from-transparent after:to-black/40">
         <Image
-          src="/images/burger.jpg"
+          src={productImgUrl}
           alt="hamburguesa"
           fill
           className="rounded-[1.5rem] object-cover object-center "
@@ -21,40 +34,33 @@ const ProductDetails = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <h2 className="flex items-center gap-[2px]">
-          <ChefHat className="h-4 w-4 text-accent" />
-          Ingredientes
-        </h2>
+        {productData.descripcion ? (
+          <h2 className="flex items-center gap-[2px] text-lg font-semibold">
+            Descripción
+          </h2>
+        ) : (
+          ""
+        )}
+
         <p className="flex items-center gap-[3px] text-sm">
-          <Clock className="h-[15px] w-[15px] text-accent" /> 20 min{" "}
+          <Clock className="h-[15px] w-[15px] text-accent" />{" "}
+          {productData.tiempo} min{" "}
           <span className="text-xs text-accent">(apróx)</span>
         </p>
       </div>
 
-      <ul className="flex flex-wrap items-center gap-1">
-        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
-          Carne
-        </li>
-        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
-          Queso
-        </li>
-        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
-          Pan de hamburguesa
-        </li>
-        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
-          Huevo
-        </li>
-        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
-          Tomate
-        </li>
-        <li className="px-2 py-[.2rem] select-none shadow-sm shadow-black/30 shrink-0  rounded-md text-sm bg-accent/50">
-          Lechuga
-        </li>
-      </ul>
+      {productData.descripcion ? (
+        <p className="text-card-foreground">{productData.descripcion}</p>
+      ) : (
+        ""
+      )}
 
-      <h3 className="flex items-center gap-[2px]">
-        <DollarSign className="h-4 w-4 text-accent" />
-        Precio: $2000
+      <h3 className="flex items-center gap-1 py-4">
+        <span className="font-semibold">Precio:</span>{" "}
+        <span className="flex items-center">
+          <DollarSign className="relative top-[1.4px] h-4 w-4 text-accent" />
+          {productData.precio}
+        </span>
       </h3>
 
       <form className="flex w-full flex-col gap-2 ">
