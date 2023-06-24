@@ -1,11 +1,11 @@
 import BackButton from "@/components/back-button"
 import ProductDetails from "@/components/product-details"
 
-const SingleProductPage = () => {
+const SingleProductPage = ({ params }: any) => {
   return (
     <div className="container flex flex-col gap-2 py-4">
       <BackButton />
-      <ProductDetails />
+      <ProductDetails params={params} />
     </div>
   )
 }
