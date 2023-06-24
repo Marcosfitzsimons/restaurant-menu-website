@@ -17,6 +17,9 @@ const SiteFooter = () => {
                 <span className="absolute -right-[2px] top-[1px] flex h-3 w-3 items-center justify-center rounded-full bg-accent text-[8px] text-white ">
                   2
                 </span>
+                <span className="absolute -top-[15.5px] w-16 text-center rounded-md bg-card text-[9px] px-1 font-bold uppercase">
+                  Mi pedido
+                </span>
               </Link>
             </li>
           </ul>
