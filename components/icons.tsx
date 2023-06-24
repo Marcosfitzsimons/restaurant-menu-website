@@ -5,6 +5,7 @@ import {
   Facebook,
   Home,
   IceCream,
+  Instagram,
   LayoutGrid,
   LucideProps,
   Moon,
@@ -19,6 +20,7 @@ export type Icon = LucideIcon
 export const Icons = {
   sun: SunMedium,
   moon: Moon,
+  instagram: Instagram,
   wan: Wand2,
   home: Home,
   cupSoda: CupSoda,
