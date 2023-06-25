@@ -1,3 +1,4 @@
+import { Product } from "@/types/product"
 import { siteConfig } from "@/config/site"
 
 import Card from "./card"
@@ -15,7 +16,7 @@ async function getMostSoldData() {
 const MostSold = async () => {
   const data = await getMostSoldData()
   console.log(data.data)
-  const mostSoldProducts = data.data
+  const mostSoldProducts: Product[] = data.data
   return (
     <section className="flex flex-col gap-2">
       <div className="mb-1 mt-3 flex w-full items-center justify-between ">
@@ -24,7 +25,7 @@ const MostSold = async () => {
       </div>
       <div className="flex gap-2 overflow-x-auto">
         {mostSoldProducts.length > 0
-          ? mostSoldProducts.map((product: any) => (
+          ? mostSoldProducts.map((product) => (
               <Card key={product.id} product={product} />
             ))
           : ""}

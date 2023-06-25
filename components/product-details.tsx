@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
-import { AlignLeft, Clock, DollarSign } from "lucide-react"
+import { Clock, DollarSign } from "lucide-react"
+import { ProductDetails } from "@/types/product-details"
 
 import ProductCount from "./product-count"
 import { Button } from "./ui/button"
@@ -17,8 +18,8 @@ async function getSingleProductData(id: number) {
 
 const ProductDetails = async ({ params }: any) => {
   const data = await getSingleProductData(params.id)
-  const productData = data.data.attributes
-
+  const productData: ProductDetails = data.data.attributes
+  console.log(data)
   const productImgUrl = productData.imagen.data.attributes.formats.medium.url
   return (
     <section className="mt-4 flex flex-col gap-2">
