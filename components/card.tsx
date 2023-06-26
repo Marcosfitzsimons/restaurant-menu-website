@@ -1,4 +1,3 @@
-import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Plus } from "lucide-react"
@@ -22,11 +21,14 @@ const Card = ({ product }: CardProps) => {
         sizes="(max-width: 768px) 100vw"
       />
 
-      <h5 className="z-20 w-8/12 font-bold">{productData.titulo}</h5>
+      <h5 className="z-20 w-8/12 text-lg font-bold">{productData.titulo}</h5>
       <div className="z-20 flex justify-between">
         <div className="flex flex-col">
           <p className="">${productData.precio}</p>
-          <Link href={`/${product.id}`} className="text-sm text-white">
+          <Link
+            href={`/${product.id}`}
+            className="text-sm text-[hsl(181,43%,60%)]"
+          >
             ver más
           </Link>
         </div>

@@ -9,7 +9,7 @@ const CartPage = () => {
         <div className="absolute left-0">
           <BackButton />
         </div>
-        <h1 className="text-center font-semibold">Mi pedido</h1>
+        <h1 className="text-center text-lg font-semibold">Mi pedido</h1>
       </div>
 
       <div className="flex flex-col gap-2">

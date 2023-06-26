@@ -22,7 +22,7 @@ export function SiteHeader() {
                 variant: "ghost",
               })}
             >
-              <Icons.instagram className="h-5 w-5" />
+              <Icons.instagram className="h-[18px] w-[18px]" />
               <span className="sr-only">Instagram</span>
             </div>
           </Link>
@@ -37,7 +37,7 @@ export function SiteHeader() {
                 variant: "ghost",
               })}
             >
-              <Icons.facebook className="h-5 w-5" />
+              <Icons.facebook className="h-[18px] w-[18px]" />
               <span className="sr-only">Facebook</span>
             </div>
           </Link>

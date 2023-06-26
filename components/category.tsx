@@ -11,16 +11,15 @@ interface CategoryProps {
 
 const Category = ({ category }: CategoryProps) => {
   const pathname = usePathname()
-  console.log(pathname)
   return (
     <li className="flex flex-col items-center text-xs">
       <Link
         href={`/${category.text.toLowerCase()}`}
-        className={`${
+        className={`flex h-12 w-12  items-center justify-center rounded-full border transition-colors hover:border-foreground hover:bg-accent/50 ${
           pathname === `/${category.text.toLowerCase()}`
             ? "border-foreground bg-accent/50"
-            : ""
-        } flex h-12 w-12  items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-foreground hover:bg-accent/50`}
+            : "border-border bg-card"
+        }`}
       >
         {category.icon}
       </Link>
