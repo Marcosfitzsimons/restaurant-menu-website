@@ -3,7 +3,11 @@ import { Search } from "lucide-react"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
 
-const SearchBar = ({ placeholder }) => {
+interface SearchBarProps {
+  placeholder: string
+}
+
+const SearchBar = ({ placeholder }: SearchBarProps) => {
   return (
     <div className="grid w-full items-center gap-2">
       {/* <Label htmlFor="search">Busca por nombre</Label>*/}
