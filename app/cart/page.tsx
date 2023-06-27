@@ -1,3 +1,7 @@
+import Link from "next/link"
+import { useStore } from "@/src/store"
+import { DollarSign } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import BackButton from "@/components/back-button"
 import ProductThumbnail from "@/components/product-thumbnail"
@@ -17,11 +21,23 @@ const CartPage = () => {
           <ProductThumbnail />
           <ProductThumbnail />
         </div>
-        <Button>Añadir más</Button>
+        <Button asChild>
+          <Link href="/">Añadir más</Link>
+        </Button>
       </div>
 
       <div className="flex flex-col">
-        <p>Total: $ 4400</p>
+        <div className="flex items-center gap-2 text-lg">
+          <p className="flex items-center gap-1 font-semibold">
+            <span className="aspect-square w-3 animate-pulse rounded-full bg-accent" />
+            Total:
+          </p>
+
+          <span className="flex items-center">
+            <DollarSign className="relative top-[1.45px] h-4 w-4 text-accent" />
+            4400
+          </span>
+        </div>
         <span className="text-xs">
           El precio es apróximado y puede variar. Por favor, consultar en caja.
         </span>

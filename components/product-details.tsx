@@ -3,7 +3,6 @@ import Image from "next/image"
 import { Clock, DollarSign } from "lucide-react"
 import { ProductDetails } from "@/types/product-details"
 
-import ProductCount from "./product-count"
 import { Button } from "./ui/button"
 
 async function getSingleProductData(id: number) {
@@ -65,7 +64,6 @@ const ProductDetails = async ({ params }: any) => {
       </h3>
 
       <form className="flex w-full flex-col gap-2 ">
-        <ProductCount />
         <Button className="w-full rounded-[2.2rem]">Agregar a mi pedido</Button>
       </form>
     </section>

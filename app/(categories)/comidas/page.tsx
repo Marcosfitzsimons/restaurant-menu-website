@@ -11,12 +11,19 @@ const ComidasPage = async () => {
   return (
     <CategoryWrapper title="Comidas" placeholder="ej. Hamburguesa completa">
       <div className="flex flex-col gap-1">
+        {/* @ts-expect-error Server Component */}
         <HamburgersCategory />
+        {/* @ts-expect-error Server Component */}
         <PizzasCategory />
+        {/* @ts-expect-error Server Component */}
         <SandwichesTCategory />
+        {/* @ts-expect-error Server Component */}
         <SandwichesECategory />
+        {/* @ts-expect-error Server Component */}
         <EmpanadasCategory />
+        {/* @ts-expect-error Server Component */}
         <SaladsCategory />
+        {/* @ts-expect-error Server Component */}
         <PanchosCategory />
       </div>
     </CategoryWrapper>
