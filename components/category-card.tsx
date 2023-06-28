@@ -14,7 +14,7 @@ const CategoryCard = ({ product }: CardProps) => {
   return (
     <article className="w-full text-card relative max-w-[355px] flex flex-col justify-between gap-[75px] rounded-[1.5rem] py-5 px-3 after:absolute after:rounded-[1.5rem] after:inset-0 after:z-10 after:bg-gradient-to-b after:from-transparent after:to-black/90 dark:text-white">
       <Image
-        src={productImgUrl ? productImgUrl : ""}
+        src={productImgUrl ? productImgUrl : "https://picsum.photos/200/300"}
         alt="animales"
         fill
         className="-z-10 rounded-[1.5rem] object-cover object-center"
