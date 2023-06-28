@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Plus } from "lucide-react"
+import { DollarSign, Plus } from "lucide-react"
 
 import { CardProps } from "@/types/card"
 
@@ -24,7 +24,10 @@ const Card = ({ product }: CardProps) => {
       <h5 className="z-20 w-8/12 text-lg font-bold">{productData.titulo}</h5>
       <div className="z-20 flex justify-between">
         <div className="flex flex-col">
-          <p className="">${productData.precio}</p>
+          <p className="flex items-center">
+            <DollarSign className="relative top-[1.45px] h-4 w-4 text-accent" />
+            <span>{productData.precio}</span>
+          </p>
           <Link
             href={`/${product.id}`}
             className="text-sm text-[hsl(181,43%,60%)]"

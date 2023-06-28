@@ -30,12 +30,12 @@ const CartPage = () => {
         <div className="flex items-center gap-2 text-lg">
           <p className="flex items-center gap-1 font-semibold">
             <span className="aspect-square w-3 animate-pulse rounded-full bg-accent" />
-            Total:
+            <span>Total:</span>
           </p>
 
           <span className="flex items-center">
             <DollarSign className="relative top-[1.45px] h-4 w-4 text-accent" />
-            4400
+            <span>4400</span>
           </span>
         </div>
         <span className="text-xs">

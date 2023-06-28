@@ -25,7 +25,7 @@ const ProductThumbnail = () => {
 
           <p className="flex items-center">
             <DollarSign className="relative top-[1.45px] h-4 w-4 text-accent" />
-            {2000}
+            <span>{2000}</span>
           </p>
         </div>
         <Trash2 className="absolute right-2 top-1 aspect-square w-4 cursor-pointer text-red-600" />
