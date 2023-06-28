@@ -15,7 +15,7 @@ const Hero = () => {
       />
       <div className="flex max-w-[980px] flex-col items-center gap-14">
         <div className="relative z-20 after:absolute after:pointer-events-none after:inset-px after:rounded-[7px] after:shadow-highlight after:shadow-white/30 dark:after:shadow-highlight dark:after:accent/20 after:transition focus-within:after:shadow-accent dark:focus-within:after:shadow-accent ">
-          <h1 className="flex select-none items-center rounded-lg border border-[#e1e7ef]/20 bg-black/5 px-3 py-1 font-serif  text-white shadow-black/50 shadow-input backdrop-blur-md dark:bg-accent/5 dark:shadow-black/10 dark:shadow-input">
+          <h1 className="flex select-none items-center rounded-lg border border-[#e1e7ef]/20 bg-black/5 px-3 py-1 font-serif  text-white shadow-md shadow-black/50  backdrop-blur-md dark:bg-accent/5 dark:shadow-black/10 dark:shadow-input">
             Golfo Nuevo Confitería
           </h1>
         </div>
