@@ -6,7 +6,7 @@ import { ProductDetails } from "@/types/product-details"
 import { Button } from "./ui/button"
 
 async function getSingleProductData(id: number) {
-  const res = await fetch(`http://127.0.0.1:1337/api/products/${id}?populate=*`)
+  const res = await fetch(`https://restaurant-menu-strapi-production.up.railway.app/api/products/${id}?populate=*`)
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data")
