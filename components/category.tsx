@@ -15,13 +15,15 @@ const Category = ({ category }: CategoryProps) => {
     <li className="flex flex-col items-center text-xs">
       <Link
         href={`/${category.text.toLowerCase()}`}
-        className={`flex h-12 w-12  items-center justify-center rounded-full border transition-colors hover:border-foreground hover:bg-accent/50 ${
+        className={`relative rounded-full after:absolute after:pointer-events-none after:inset-px after:rounded-full after:shadow-highlight after:shadow-gray-300/20 after:transition focus-within:after:shadow-accent transition-colors dark:after:shadow-highlight dark:after:shadow-accent/20 dark:focus-within:after:shadow-accent  ${
           pathname === `/${category.text.toLowerCase()}`
-            ? "border-foreground bg-accent/50"
-            : "border-border bg-card"
+            ? "after:shadow-accent bg-accent/50 dark:after:shadow-accent"
+            : "after:shadow-gray-300/20 bg-card hover:bg-accent/50 hover:after:shadow-accent"
         }`}
       >
-        {category.icon}
+        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#f1f4f7]/20 dark:shadow-black/10 dark:shadow-input dark:border-[#f1f4f7]/20">
+          {category.icon}
+        </span>
       </Link>
       <span className="select-none">{category.text}</span>
     </li>
