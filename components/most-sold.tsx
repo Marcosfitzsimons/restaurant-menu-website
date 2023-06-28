@@ -19,10 +19,7 @@ const MostSold = async () => {
   const mostSoldProducts: Product[] = data.data
   return (
     <section className="flex flex-col gap-2">
-      <div className="mb-1 mt-3 flex w-full items-center justify-between ">
-        <h4 className="font-semibold">Lo más pedido</h4>
-        <button className="self-end text-sm text-accent">Ver todos</button>
-      </div>
+      <h4 className="mb-1 mt-3 font-semibold">Lo más pedido</h4>
       <div className="flex gap-2 overflow-x-auto">
         {mostSoldProducts.length > 0
           ? mostSoldProducts.map((product) => (
