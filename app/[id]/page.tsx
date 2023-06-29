@@ -4,7 +4,9 @@ import ProductDetails from "@/components/product-details"
 const SingleProductPage = ({ params }: any) => {
   return (
     <div className="container flex flex-col gap-2 py-4">
-      <BackButton />
+      <div className="flex">
+        <BackButton />
+      </div>
       {/* @ts-expect-error Server Component */}
       <ProductDetails params={params} />
     </div>

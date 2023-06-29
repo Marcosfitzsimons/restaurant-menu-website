@@ -19,13 +19,19 @@ const ProductDetails = async ({ params }: any) => {
   const data = await getSingleProductData(params.id)
   const productData: ProductDetails = data.data.attributes
   let productImgUrl
-  if (productData.imagen.data.attributes.formats.medium) {
-    productImgUrl = productData.imagen.data.attributes.formats.medium.url
-  } else if (productData.imagen.data.attributes.formats.small) {
-    productImgUrl = productData.imagen.data.attributes.formats.small.url
-  } else {
-    productData.imagen.data.attributes.formats.thumbnail.url
+  const { formats } = productData.imagen.data.attributes
+
+  if (formats?.medium) {
+    productImgUrl = formats.medium.url
+  } else if (formats?.small) {
+    productImgUrl = formats.small.url
+  } else if (formats?.thumbnail) {
+    productImgUrl = formats.thumbnail.url
+  } else if (formats?.large) {
+    productImgUrl = formats.large.url
   }
+
+  
   return (
     <section className="mt-4 flex flex-col gap-2">
       <h1 className="text-lg font-bold">{productData.titulo}</h1>

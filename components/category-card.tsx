@@ -9,14 +9,17 @@ import { Button } from "./ui/button"
 const CategoryCard = ({ product }: CardProps) => {
   const productData = product.attributes
   let productImgUrl
-  if (product.attributes.imagen.data.attributes.formats.medium) {
-    productImgUrl = product.attributes.imagen.data.attributes.formats.medium.url
-  } else if (product.attributes.imagen.data.attributes.formats.small) {
-    productImgUrl = product.attributes.imagen.data.attributes.formats.small.url
-  } else {
-    product.attributes.imagen.data.attributes.formats.thumbnail.url
+  const { formats } = productData.imagen.data.attributes
+
+  if (formats?.medium) {
+    productImgUrl = formats.medium.url
+  } else if (formats?.small) {
+    productImgUrl = formats.small.url
+  } else if (formats?.thumbnail) {
+    productImgUrl = formats.thumbnail.url
+  } else if (formats?.large) {
+    productImgUrl = formats.large.url
   }
-  console.log(productImgUrl)
   return (
     <article className="w-full text-card relative max-w-[355px] flex flex-col justify-between gap-[90px] rounded-[1.5rem] py-5 px-3 after:absolute after:rounded-[1.5rem] after:inset-0 after:z-10 after:bg-gradient-to-b after:from-transparent after:to-black/90 dark:text-white">
       <Image
