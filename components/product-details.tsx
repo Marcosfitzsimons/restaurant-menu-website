@@ -21,8 +21,10 @@ const ProductDetails = async ({ params }: any) => {
   let productImgUrl
   if (productData.imagen.data.attributes.formats.medium) {
     productImgUrl = productData.imagen.data.attributes.formats.medium.url
-  } else {
+  } else if (productData.imagen.data.attributes.formats.small) {
     productImgUrl = productData.imagen.data.attributes.formats.small.url
+  } else {
+    productData.imagen.data.attributes.formats.thumbnail.url
   }
   return (
     <section className="mt-4 flex flex-col gap-2">

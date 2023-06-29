@@ -11,8 +11,10 @@ const Card = ({ product }: CardProps) => {
   let productImgUrl
   if (product.attributes.imagen.data.attributes.formats.medium) {
     productImgUrl = product.attributes.imagen.data.attributes.formats.medium.url
-  } else {
+  } else if (product.attributes.imagen.data.attributes.formats.small) {
     productImgUrl = product.attributes.imagen.data.attributes.formats.small.url
+  } else {
+    product.attributes.imagen.data.attributes.formats.thumbnail.url
   }
   return (
     <article className="shrink-0 text-card w-60 relative flex flex-col justify-between gap-24 rounded-[1.5rem] py-5 px-3 after:absolute after:rounded-[1.5rem] after:inset-0 after:z-10 after:bg-gradient-to-b after:from-transparent after:to-black/90 dark:text-white">
